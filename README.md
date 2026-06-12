@@ -17,3 +17,29 @@ Es un lenguaje de programacion interpretado y de propósito general, enfocado en
 ```php
 declare(strict_types=1)
 ```
+
+- Imprime una línea nueva para separar la salida.
+
+```php
+PHP_EQL
+```
+
+- Imprime el valor y tipo de dato de $name.
+
+```php
+$emptyValue = null;
+echo "Valor vacio: " . var_export($emptyValue, true) . PHP_EOL
+```
+
+- Imprime el tipo de dato
+
+```php
+gettype($variable)
+```
+
+- Declaracion de una constante
+
+```php
+const API_URL = "https://api.example.com";
+echo "URL: " . API_URL . PHP_EOL;
+```
