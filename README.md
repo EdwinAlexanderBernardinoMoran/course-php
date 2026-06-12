@@ -43,3 +43,12 @@ gettype($variable)
 const API_URL = "https://api.example.com";
 echo "URL: " . API_URL . PHP_EOL;
 ```
+
+- Interpolacion de string y escapar string.
+
+```php
+$name = "Edwin";
+$course = "\"PHP moderno\"";
+
+$interpolatedMessage = "Bienvenido {$name} al curso de {$course}!";
+```

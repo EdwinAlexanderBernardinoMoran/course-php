@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 declare(strict_types=1); // Habilita el modo estricto para tipos de datos
 
