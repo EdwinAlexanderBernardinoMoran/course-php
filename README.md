@@ -1,6 +1,6 @@
 # Que es PHP?
 
-Es un lenguaje de programacion interpretado y de propósito general, enfocado en desarrollo web.
+Es un lenguaje de programacion interpretado y de propósito general, enfocado en desarrollo web. PHP es un lenguaje debilmente tipado.
 
 **Creador**: Originalmente creado en 1994 por Rasmus Lerdorf.
 
