@@ -112,3 +112,14 @@ Son muy comunes en **bucles**, **contadores**, **paginación** y **procesamiento
 | $a++         | Post-incremento (usa el valor y luego incrementa) |
 | --$a         | Pre-decremento (decrementa y luego usa el valor)  |
 | $a--         | Post-decremento (usa el valor y luego decrementa) |
+
+## Control de flujo
+
+- Situaciones recomendadas para el uso de condicionales:
+
+| **Situación**                      | **Recomendado** |
+| ---------------------------------- | --------------- |
+| Comparaciones complejas            | if / else       |
+| Rangos de valores                  | if / elseif     |
+| Comparar un solo valor fijo        | switch o match  |
+| Condiciones con operadores lógicos | if              |
