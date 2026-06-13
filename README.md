@@ -52,3 +52,63 @@ $course = "\"PHP moderno\"";
 
 $interpolatedMessage = "Bienvenido {$name} al curso de {$course}!";
 ```
+
+### **Operadores aritmeticos**
+
+- Se utilizan para realizar operaciones matemáticas.
+
+| **Operador** | **Descripción**  |
+| ------------ | ---------------- |
+| +            | Suma             |
+| -            | Resta            |
+| \*           | Multiplicación   |
+| /            | División         |
+| %            | Módulo (residuo) |
+
+### **⚖️ Operadores de asignación**
+
+- Permiten asignar valores a una variable.
+
+| **Operador** | **Descripción**             |
+| ------------ | --------------------------- |
+| =            | Asignación                  |
+| +=           | Asignación y suma           |
+| \*=          | Asignación y multiplicación |
+| /=           | Asignación y división       |
+
+### **🔍 Operadores de comparación**
+
+- Se usan para **comparar valores** y devuelven true o false.
+
+| **Operador** | **Descripción**                  |
+| ------------ | -------------------------------- |
+| ==           | Igualdad (valor)                 |
+| ===          | Igualdad estricta (valor y tipo) |
+| !=           | Diferente                        |
+| !==          | Diferente estricto               |
+| >            | Mayor que                        |
+| <            | Menor que                        |
+| >=           | Mayor o igual                    |
+| <=           | Menor o igual                    |
+
+### **🧠 Operadores lógicos**
+
+Se usan para **combinar expresiones booleanas** y devuelven true o false.
+
+| **Operador** | **Descripción**                                    |
+| ------------ | -------------------------------------------------- |
+| &&           | AND lógico (true si ambas condiciones son true)    |
+| &#124;&#124; | OR lógico (true si al menos una condición es true) |
+| !            | NOT lógico (invierte el valor booleano)            |
+
+### **🧠 Operadores de incremento y decremento**
+
+Se usan para **aumentar o disminuir el valor de una variable numérica en 1**.  
+Son muy comunes en **bucles**, **contadores**, **paginación** y **procesamiento de listas**.
+
+| **Operador** | **Descripción**                                   |
+| ------------ | ------------------------------------------------- |
+| ++$a         | Pre-incremento (incrementa y luego usa el valor)  |
+| $a++         | Post-incremento (usa el valor y luego incrementa) |
+| --$a         | Pre-decremento (decrementa y luego usa el valor)  |
+| $a--         | Post-decremento (usa el valor y luego decrementa) |
