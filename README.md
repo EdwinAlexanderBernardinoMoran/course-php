@@ -123,3 +123,15 @@ Son muy comunes en **bucles**, **contadores**, **paginación** y **procesamiento
 | Rangos de valores                  | if / elseif     |
 | Comparar un solo valor fijo        | switch o match  |
 | Condiciones con operadores lógicos | if              |
+
+- ⚖️ Diferencia clara entre break y continue. `continue` solo funciona dentro de bucles.
+
+| **Instrucción** | **Qué hace**                |
+| --------------- | --------------------------- |
+| break           | Sale del bucle por completo |
+| continue        | Salta la iteración actual   |
+| Uso típico      | Buscar algo y detener       |
+| Uso típico      | Filtrar o ignorar datos     |
+
+- **break**: Termina el ciclo inmediatamente y sale del loop
+- **continue**: Omite el resto de la iteración actual y pasa a la siguiente iteración del ciclo.
