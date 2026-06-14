@@ -180,8 +180,30 @@ echo $users[0]["nombre"]; // Juan
 - Metodos para los array.
 
 ```php
-$products = ['Apple', 'Banana', 'Cherry'];
+array_push($products, 'Date') // Agrega un elemento al final del array.
 
-array_push($products, 'Date') // Adds 'Date' to the end of the array
-array_pop($products); // Removes the last element ('Date')
+array_pop($products); // Remueve el ultimo elemento
+
+count($products); // Cuenta el numero de elementos
+
+array_map(
+    fn(array $user): string => $user['username'],
+    $users
+); // Permite aplicar una función a cada elemento de un array y devuelve un nuevo array con los resultados.
+
+array_filter(
+    $users,
+    fn(array $user): bool => $user['role'] === 'admin'
+); // Permite filtrar elementos de un array según una condición y devuelve un nuevo array con los elementos que cumplen dicha condición.
+
+in_array($currentRole, $allowedRoles) // Permite verificar si un valor existe dentro de un array.
+
+array_key_exists("email", $users); // Verificar si una clave existe en un array asociativo
+
+array_reduce(
+    $cart,
+    fn($total, $product) => $total + (float)$product["price"],
+    0
+); // Permite reducir un array a un único valor recorriendo todos sus elementos y acumulando un resultado.
+
 ```
