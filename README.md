@@ -206,4 +206,10 @@ array_reduce(
     0
 ); // Permite reducir un array a un único valor recorriendo todos sus elementos y acumulando un resultado.
 
+array_column($catalog, "sku") // Permite extraer los valores de una columna específica de un array multidimensional.
+
+$requestedSku = "HD-004";
+
+array_search($requestedSku, $array) // Busca un valor dentro de un array y devuelve la clave (índice) donde fue encontrado.
+
 ```

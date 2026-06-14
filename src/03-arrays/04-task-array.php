@@ -4,6 +4,9 @@ $catalog = [
     ["sku" => "LP-001", "name" => "Laptop", "price" => 1200, "stock" => 3],
     ["sku" => "MS-002", "name" => "Mouse", "price" => 25, "stock" => 0],
     ["sku" => "KB-003", "name" => "Teclado", "price" => 80, "stock" => 12],
+    ["sku" => "HD-004", "name" => "Disco Duro", "price" => 150, "stock" => 5],
+    ["sku" => "MN-005", "name" => "Monitor", "price" => 300, "stock" => 0],
+    ["sku" => "PR-006", "name" => "Impresora", "price" => 200, "stock" => 7],
 ];
 
 $usersTask = [
@@ -38,3 +41,28 @@ $productsInStock = array_filter(
 foreach ($productsInStock as $product) {
     echo "{$product["name"]} | Precio: \${$product["price"]}" . PHP_EOL;
 }
+
+// Task: Ordenar los productos en stock por precio de menor a mayor.
+
+usort(
+    $productsInStock,
+    fn(array $a, array $b): int => $a["price"] <=> $b["price"]
+);
+
+foreach ($productsInStock as $product) {
+    echo "{$product["name"]} | Precio: \${$product["price"]}" . PHP_EOL;
+}
+
+
+// Task: Buscar un producto por su SKU y mostrar su información completa. Si el producto no se encuentra, mostrar un mensaje indicando que no se encontró.
+
+$skuList = array_column($catalog, "sku");
+$requestedSku = "HD-004";
+
+if (!in_array($requestedSku, $skuList)) {
+    echo "El producto con SKU '{$requestedSku}' no se encuentra en el catálogo." . PHP_EOL;
+    exit;
+}
+
+$index = array_search($requestedSku, $skuList);
+echo "El producto con SKU '{$requestedSku}' se encuentra en el índice: {$index}" . PHP_EOL;
