@@ -135,3 +135,53 @@ Son muy comunes en **bucles**, **contadores**, **paginación** y **procesamiento
 
 - **break**: Termina el ciclo inmediatamente y sale del loop
 - **continue**: Omite el resto de la iteración actual y pasa a la siguiente iteración del ciclo.
+
+## Array y funciones útiles.
+
+- Un array en PHP es una estructura de datos que permite almacenar múltiples valores en una sola variable.
+
+```php
+
+// Array indexado se acceden a los elementos por medio de indices.
+
+$frutas = ["manzana", "pera", "uva"];
+
+echo $frutas[0]; // manzana
+
+
+
+// Array asociativo los elementos se acceden mediante claves personalizadas.
+
+$person = [
+    "nombre" => "Edwin",
+    "edad" => 30,
+];
+
+echo $person["nombre"]; // Edwin
+
+
+
+// Array multidimencional es un array que contiene otros arrays.
+
+$users = [
+    [
+        "nombre" => "Juan",
+        "edad" => 25,
+    ],
+    [
+        "nombre" => "Ana",
+        "edad" => 30,
+    ],
+];
+
+echo $users[0]["nombre"]; // Juan
+```
+
+- Metodos para los array.
+
+```php
+$products = ['Apple', 'Banana', 'Cherry'];
+
+array_push($products, 'Date') // Adds 'Date' to the end of the array
+array_pop($products); // Removes the last element ('Date')
+```
