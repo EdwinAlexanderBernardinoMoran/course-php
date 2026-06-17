@@ -59,5 +59,4 @@ function greet(string $name): string {
 
     return "Hola {$name}" . PHP_EOL;
 }
-echo greet("Alice", "Bob");
 echo greet("Alice");
