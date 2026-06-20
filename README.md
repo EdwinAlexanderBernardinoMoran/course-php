@@ -213,3 +213,31 @@ $requestedSku = "HD-004";
 array_search($requestedSku, $array) // Busca un valor dentro de un array y devuelve la clave (índice) donde fue encontrado.
 
 ```
+
+## Manejo basico de errores
+
+Utilizaremos el manejo de errores utilizando `try-catch` para capturar excepciones y manejar errores de manera controlada.
+
+```php
+function greet(string $name): string
+{
+    if (func_num_args() > 1) {
+        throw new ArgumentCountError;
+    }
+    return "Hola, $name!\n";
+}
+
+try {
+    echo greet("Devi");
+} catch (ArgumentCountError $e) {
+    // Se ejecuta si hay una excepción
+    echo "Error de uso: Número incorrecto de argumentos. " . $e->getMessage() . "\n";
+
+} catch (Throwable $e) {
+    echo "Ocurrió un error inesperado. Intenta nuevamente.\n";
+} finally {
+    // Opcional: se ejecuta siempre (con o sin error)
+    echo "Operación finalizada";
+}
+
+```
