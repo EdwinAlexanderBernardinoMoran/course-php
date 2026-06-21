@@ -257,3 +257,20 @@ try {
 ```
 
 - Se pueden mandar el nombre del parametro junto con el valor, esto se llama **argumentos nombrados** y permite pasar los argumentos en cualquier orden.
+
+- Funciones anónimas: Son funciones sin nombre que se pueden asignar a variables o pasar como argumentos a otras funciones.
+
+```php
+    $greet = function (string $name): string {
+        return "Hola, $name!";
+    };
+
+    echo $greet("Devi"); // Hola, Devi!
+```
+
+- Funciones de flecha: Son una sintaxis más concisa para funciones anónimas, introducidas en PHP 7.4.
+
+```php
+    $greet = fn(string $name): string => "Hola, $name!";
+    echo $greet("Devi"); // Hola, Devi!
+```
