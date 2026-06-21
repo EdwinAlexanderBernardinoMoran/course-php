@@ -241,3 +241,19 @@ try {
 }
 
 ```
+
+## Funciones e incluir archivos.
+
+- Funciones: Son bloques de código reutilizables que realizan una tarea específica. Se definen con la palabra clave `function` y pueden aceptar parámetros y devolver valores.
+
+```php
+    function calculateTotal(float $price, int $quantity): float
+    {
+        return $price * $quantity;
+    }
+
+    echo calculateTotal(19.99, 3); // 59.97
+    echo calculateTotal(price: 19.99, quantity: 3); // 59.97
+```
+
+- Se pueden mandar el nombre del parametro junto con el valor, esto se llama **argumentos nombrados** y permite pasar los argumentos en cualquier orden.
