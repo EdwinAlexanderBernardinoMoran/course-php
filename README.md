@@ -289,3 +289,31 @@ function showTotalWithGlobal()
 
 showTotalWithGlobal(); // Output: Total inside function (using global): 100
 ```
+
+- `$calculateTax` (con use): captura el valor de `$tax` del entorno en el momento en que se define y lo "congela" por valor. Se llama con un solo argumento: `$calculateTax(100)`. Si `$tax` cambia después, la función seguirá usando el valor original (0.13).
+
+```php
+$tax = 0.13;
+
+$calculateTax = function (float $amount) use ($tax): float {
+    return $amount * $tax;
+};
+```
+
+- `$calculateTaxTwo` (con parámetro): no depende de variables externas; recibe `$tax` en cada llamada como segundo argumento: `$calculateTaxTwo(100, 0.13)`. Es más flexible y reutilizable, ya que puedes usar cualquier tasa cada vez.
+
+```php
+$tax = 0.13;
+
+$calculateTaxTwo = function (float $amount, float $tax): float {
+    return $amount * $tax;
+};
+```
+
+- Cuando es funcion de flecha, no se necesita `use` para capturar `$tax`, ya que las funciones de flecha heredan automáticamente el contexto de la función padre. Se llama con un solo argumento: `$calculateTaxArrow(100)`.
+
+```php
+$tax = 0.13;
+
+$calculateTaxArrow = fn(float $amount): float => $amount * $tax;
+```

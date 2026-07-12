@@ -29,3 +29,25 @@ function showTotal(float $total): void
 }
 
 showTotal($total); // Output: Total inside function (using parameter): 100
+
+
+// ------------------------- Funciones -------------------------
+
+$tax = 0.13;
+
+$calculateTax = function (float $amount) use ($tax): float {
+    return $amount * $tax;
+};
+
+$calculateTaxTwo = function (float $amount, float $tax): float {
+    return $amount * $tax;
+};
+
+echo "Impuesto (closure) sobre 100: " . $calculateTax(100) . PHP_EOL; // Output: Impuesto sobre 100: 13
+
+
+// ------------------------- Funciones de flecha -------------------------
+
+$calculateTaxArrow = fn(float $amount): float => $amount * $tax;
+
+echo "Impuesto (arrow function) sobre 100: " . $calculateTaxArrow(100) . PHP_EOL; // Output: Impuesto sobre 100: 13
