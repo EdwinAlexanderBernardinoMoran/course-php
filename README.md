@@ -274,3 +274,18 @@ try {
     $greet = fn(string $name): string => "Hola, $name!";
     echo $greet("Devi"); // Hola, Devi!
 ```
+
+- Los `if` y `else` no crean un nuevo scope, por lo que las variables definidas dentro de ellos son accesibles fuera del bloque.
+
+- Es mala practica usar variables globales dentro de funciones, ya que puede llevar a errores difíciles de depurar y hace que el código sea menos modular y más difícil de mantener. En su lugar, es preferible pasar las variables como parámetros a las funciones.
+
+```php
+$total = 100;
+
+function showTotalWithGlobal()
+{
+    echo "Total inside function (using global): " . $GLOBALS['total'] . PHP_EOL;
+}
+
+showTotalWithGlobal(); // Output: Total inside function (using global): 100
+```
