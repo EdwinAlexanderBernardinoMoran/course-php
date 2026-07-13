@@ -399,7 +399,27 @@ echo $room->getDetails(); // Room Number: 101, Capacity: 2
 
 **Implementación de constructores para inicializar objetos.**
 
+- Un constructor se utiliza para inicializar objetos correctamente al crearlos.
+
+```php
+class Room {
+    public string $number;
+    public int $capacity;
+
+    public function __construct(string $number, int $capacity) {
+        $this->number = $number;
+        $this->capacity = $capacity;
+    }
+}
+$room = new Room("101", 2);
+echo $room->number; // 101
+```
+
 **Control de acceso con visibilidad (public, private) y encapsulación de datos.**
+
+- La visibilidad de las propiedades y métodos determina quién puede acceder a ellos.
+- `public`: accesible desde cualquier lugar.
+- `private`: accesible solo dentro de la clase.
 
 **Principios básicos de herencia entre clases.**
 
