@@ -346,3 +346,34 @@ echo isValidEmail($email) ? "El correo electrónico es válido." . PHP_EOL : "El
 | `require`      | Similar a `include`, pero si el archivo no se encuentra, se emitirá un error fatal y el script se detendrá.                                 |
 | `include_once` | Similar a `include`, pero solo incluye el archivo una vez, evitando inclusiones múltiples.                                                  |
 | `require_once` | Similar a `require`, pero solo incluye el archivo una vez, evitando inclusiones múltiples.                                                  |
+
+## Programacion orientada a objetos (POO)
+
+En esta sección aprenderás los fundamentos de la Programación Orientada a Objetos (POO) en PHP, un paradigma clave para construir software reutilizable, escalable y organizado. Verás cómo aplicar los pilares de la POO con ejemplos claros y modernos.
+
+**¿Por qué aplicar POO en PHP?**
+
+- Facilita la organización del código en torno a objetos y clases, lo que mejora la legibilidad y mantenibilidad.
+- Paradigma de programacion basado en objetos, que permite modelar entidades del mundo real y sus interacciones.
+- Un objeto representa algo del mundo real.
+- Combia datos (`propiedades`) y comportamiento (`métodos`) en una sola entidad.
+- Organizacion del codigo por responsabilidades.
+- Codigo mas legible y reutilizable.
+- Agrupar datos y compartamiento.
+- Base para proyectos profesionales.
+
+**Cómo definir clases y crear objetos.**
+
+**Uso de propiedades y métodos en las clases.**
+
+**Implementación de constructores para inicializar objetos.**
+
+**Control de acceso con visibilidad (public, private) y encapsulación de datos.**
+
+**Principios básicos de herencia entre clases.**
+
+**Interfaces como contratos para estructurar el código.**
+
+**Clases abstractas y su utilidad.**
+
+**Caso práctico: sistema de reserva de habitación con lógica aplicada.**
