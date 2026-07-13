@@ -376,6 +376,27 @@ class Room {
 
 **Uso de propiedades y métodos en las clases.**
 
+- Las propiedades son variables que pertenecen a una clase y almacenan datos sobre el objeto
+- Los métodos son funciones que definen el comportamiento de la clase y permiten interactuar con sus propiedades.
+
+```php
+class Room {
+    public string $number;
+    public int $capacity;
+
+    public function __construct(string $number, int $capacity) {
+        $this->number = $number;
+        $this->capacity = $capacity;
+    }
+
+    public function getDetails(): string {
+        return "Room Number: {$this->number}, Capacity: {$this->capacity}";
+    }
+}
+$room = new Room("101", 2);
+echo $room->getDetails(); // Room Number: 101, Capacity: 2
+```
+
 **Implementación de constructores para inicializar objetos.**
 
 **Control de acceso con visibilidad (public, private) y encapsulación de datos.**
