@@ -257,3 +257,92 @@ try {
 ```
 
 - Se pueden mandar el nombre del parametro junto con el valor, esto se llama **argumentos nombrados** y permite pasar los argumentos en cualquier orden.
+
+- Funciones anónimas: Son funciones sin nombre que se pueden asignar a variables o pasar como argumentos a otras funciones.
+
+```php
+    $greet = function (string $name): string {
+        return "Hola, $name!";
+    };
+
+    echo $greet("Devi"); // Hola, Devi!
+```
+
+- Funciones de flecha: Son una sintaxis más concisa para funciones anónimas, introducidas en PHP 7.4.
+
+```php
+    $greet = fn(string $name): string => "Hola, $name!";
+    echo $greet("Devi"); // Hola, Devi!
+```
+
+**Scope de variables, funciones anonimas y de flecha:**
+
+- Los `if` y `else` no crean un nuevo scope, por lo que las variables definidas dentro de ellos son accesibles fuera del bloque.
+
+- Es mala practica usar variables globales dentro de funciones, ya que puede llevar a errores difíciles de depurar y hace que el código sea menos modular y más difícil de mantener. En su lugar, es preferible pasar las variables como parámetros a las funciones.
+
+```php
+$total = 100;
+
+function showTotalWithGlobal()
+{
+    echo "Total inside function (using global): " . $GLOBALS['total'] . PHP_EOL;
+}
+
+showTotalWithGlobal(); // Output: Total inside function (using global): 100
+```
+
+- `$calculateTax` (con use): captura el valor de `$tax` del entorno en el momento en que se define y lo "congela" por valor. Se llama con un solo argumento: `$calculateTax(100)`. Si `$tax` cambia después, la función seguirá usando el valor original (0.13).
+
+```php
+$tax = 0.13;
+
+$calculateTax = function (float $amount) use ($tax): float {
+    return $amount * $tax;
+};
+```
+
+- `$calculateTaxTwo` (con parámetro): no depende de variables externas; recibe `$tax` en cada llamada como segundo argumento: `$calculateTaxTwo(100, 0.13)`. Es más flexible y reutilizable, ya que puedes usar cualquier tasa cada vez.
+
+```php
+$tax = 0.13;
+
+$calculateTaxTwo = function (float $amount, float $tax): float {
+    return $amount * $tax;
+};
+```
+
+- Cuando es funcion de flecha, no se necesita `use` para capturar `$tax`, ya que las funciones de flecha heredan automáticamente el contexto de la función padre. Se llama con un solo argumento: `$calculateTaxArrow(100)`.
+
+```php
+$tax = 0.13;
+
+$calculateTaxArrow = fn(float $amount): float => $amount * $tax;
+```
+
+**Validar y sanitizar informacion**
+
+- Validar un correo electrónico: Se puede utilizar la función `filter_var` con el filtro `FILTER_VALIDATE_EMAIL` para verificar si un correo electrónico es válido.
+
+```php
+// Validar un correo electrónico
+$email = "test@gmail.com";
+
+function isValidEmail(string $email): bool
+{
+    return filter_var($email, FILTER_VALIDATE_EMAIL) !== false;
+}
+
+echo isValidEmail($email) ? "El correo electrónico es válido." . PHP_EOL : "El correo electrónico no es válido." . PHP_EOL;
+```
+
+**Incluir archivos**
+
+- Existen 4 formas de incluir archivos en PHP.
+
+| Name           | Descripción                                                                                                                                 |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `include`      | Incluye y evalúa el archivo especificado. Si el archivo no se encuentra, se emitirá una advertencia pero el script continuará ejecutándose. |
+| `require`      | Similar a `include`, pero si el archivo no se encuentra, se emitirá un error fatal y el script se detendrá.                                 |
+| `include_once` | Similar a `include`, pero solo incluye el archivo una vez, evitando inclusiones múltiples.                                                  |
+| `require_once` | Similar a `require`, pero solo incluye el archivo una vez, evitando inclusiones múltiples.                                                  |
