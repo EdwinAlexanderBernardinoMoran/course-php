@@ -335,3 +335,14 @@ function isValidEmail(string $email): bool
 
 echo isValidEmail($email) ? "El correo electrónico es válido." . PHP_EOL : "El correo electrónico no es válido." . PHP_EOL;
 ```
+
+**Incluir archivos**
+
+- Existen 4 formas de incluir archivos en PHP.
+
+| Name           | Descripción                                                                                                                                 |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `include`      | Incluye y evalúa el archivo especificado. Si el archivo no se encuentra, se emitirá una advertencia pero el script continuará ejecutándose. |
+| `require`      | Similar a `include`, pero si el archivo no se encuentra, se emitirá un error fatal y el script se detendrá.                                 |
+| `include_once` | Similar a `include`, pero solo incluye el archivo una vez, evitando inclusiones múltiples.                                                  |
+| `require_once` | Similar a `require`, pero solo incluye el archivo una vez, evitando inclusiones múltiples.                                                  |
