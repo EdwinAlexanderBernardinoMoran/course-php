@@ -275,6 +275,8 @@ try {
     echo $greet("Devi"); // Hola, Devi!
 ```
 
+**Scope de variables, funciones anonimas y de flecha:**
+
 - Los `if` y `else` no crean un nuevo scope, por lo que las variables definidas dentro de ellos son accesibles fuera del bloque.
 
 - Es mala practica usar variables globales dentro de funciones, ya que puede llevar a errores difíciles de depurar y hace que el código sea menos modular y más difícil de mantener. En su lugar, es preferible pasar las variables como parámetros a las funciones.
@@ -316,4 +318,20 @@ $calculateTaxTwo = function (float $amount, float $tax): float {
 $tax = 0.13;
 
 $calculateTaxArrow = fn(float $amount): float => $amount * $tax;
+```
+
+**Validar y sanitizar informacion**
+
+- Validar un correo electrónico: Se puede utilizar la función `filter_var` con el filtro `FILTER_VALIDATE_EMAIL` para verificar si un correo electrónico es válido.
+
+```php
+// Validar un correo electrónico
+$email = "test@gmail.com";
+
+function isValidEmail(string $email): bool
+{
+    return filter_var($email, FILTER_VALIDATE_EMAIL) !== false;
+}
+
+echo isValidEmail($email) ? "El correo electrónico es válido." . PHP_EOL : "El correo electrónico no es válido." . PHP_EOL;
 ```
