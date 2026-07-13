@@ -364,6 +364,16 @@ En esta sección aprenderás los fundamentos de la Programación Orientada a Obj
 
 **Cómo definir clases y crear objetos.**
 
+- Una clase es una plantilla que define las propiedades y métodos de un objeto. Un objeto es una instancia de una clase.
+- Un objeto es una instancia de una clase, que representa un elemento concreto con sus propios valores y comportamientos.
+
+```php
+class Room {
+    public string $number;
+    public int $capacity;
+}
+```
+
 **Uso de propiedades y métodos en las clases.**
 
 **Implementación de constructores para inicializar objetos.**
