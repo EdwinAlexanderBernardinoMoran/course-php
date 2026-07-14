@@ -423,6 +423,37 @@ echo $room->number; // 101
 
 **Principios básicos de herencia entre clases.**
 
+- La herencia permite que una clase (subclase) herede propiedades y métodos de otra clase (superclase), promoviendo la reutilización de código y la creación de jerarquías de clases.
+
+```php
+class Room {
+    public string $number;
+    public int $capacity;
+
+    public function __construct(string $number, int $capacity) {
+        $this->number = $number;
+        $this->capacity = $capacity;
+    }
+}
+class SuiteRoom extends Room {
+    public bool $hasBalcony;
+
+    public function __construct(string $number, int $capacity, bool $hasBalcony) {
+        parent::__construct($number, $capacity);
+        $this->hasBalcony = $hasBalcony;
+    }
+}
+
+class DeluxeRoom extends Room {
+    public bool $hasJacuzzi;
+
+    public function __construct(string $number, int $capacity, bool $hasJacuzzi) {
+        parent::__construct($number, $capacity);
+        $this->hasJacuzzi = $hasJacuzzi;
+    }
+}
+```
+
 **Interfaces como contratos para estructurar el código.**
 
 **Clases abstractas y su utilidad.**
