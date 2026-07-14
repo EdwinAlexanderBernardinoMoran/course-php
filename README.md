@@ -456,6 +456,23 @@ class DeluxeRoom extends Room {
 
 **Interfaces como contratos para estructurar el código.**
 
+- Una interfaz define un contrato que las clases deben cumplir, especificando los métodos que deben implementar. Esto permite una mayor flexibilidad y consistencia en el diseño del código.
+
+```php
+interface Reservable {
+    public function reserve(): bool;
+}
+class Room implements Reservable {
+    public string $number;
+    public int $capacity;
+
+    public function __construct(string $number, int $capacity) {
+        $this->number = $number;
+        $this->capacity = $capacity;
+    }
+}
+```
+
 **Clases abstractas y su utilidad.**
 
 **Caso práctico: sistema de reserva de habitación con lógica aplicada.**
