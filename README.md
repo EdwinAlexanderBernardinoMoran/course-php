@@ -500,5 +500,3 @@ class SuiteRoom extends Room {
     }
 }
 ```
-
-**Caso práctico: sistema de reserva de habitación con lógica aplicada.**
