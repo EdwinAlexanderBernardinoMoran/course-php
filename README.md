@@ -346,3 +346,157 @@ echo isValidEmail($email) ? "El correo electrónico es válido." . PHP_EOL : "El
 | `require`      | Similar a `include`, pero si el archivo no se encuentra, se emitirá un error fatal y el script se detendrá.                                 |
 | `include_once` | Similar a `include`, pero solo incluye el archivo una vez, evitando inclusiones múltiples.                                                  |
 | `require_once` | Similar a `require`, pero solo incluye el archivo una vez, evitando inclusiones múltiples.                                                  |
+
+## Programacion orientada a objetos (POO)
+
+En esta sección aprenderás los fundamentos de la Programación Orientada a Objetos (POO) en PHP, un paradigma clave para construir software reutilizable, escalable y organizado. Verás cómo aplicar los pilares de la POO con ejemplos claros y modernos.
+
+**¿Por qué aplicar POO en PHP?**
+
+- Facilita la organización del código en torno a objetos y clases, lo que mejora la legibilidad y mantenibilidad.
+- Paradigma de programacion basado en objetos, que permite modelar entidades del mundo real y sus interacciones.
+- Un objeto representa algo del mundo real.
+- Combia datos (`propiedades`) y comportamiento (`métodos`) en una sola entidad.
+- Organizacion del codigo por responsabilidades.
+- Codigo mas legible y reutilizable.
+- Agrupar datos y compartamiento.
+- Base para proyectos profesionales.
+
+**Cómo definir clases y crear objetos.**
+
+- Una clase es una plantilla que define las propiedades y métodos de un objeto. Un objeto es una instancia de una clase.
+- Un objeto es una instancia de una clase, que representa un elemento concreto con sus propios valores y comportamientos.
+
+```php
+class Room {
+    public string $number;
+    public int $capacity;
+}
+```
+
+**Uso de propiedades y métodos en las clases.**
+
+- Las propiedades son variables que pertenecen a una clase y almacenan datos sobre el objeto
+- Los métodos son funciones que definen el comportamiento de la clase y permiten interactuar con sus propiedades.
+
+```php
+class Room {
+    public string $number;
+    public int $capacity;
+
+    public function __construct(string $number, int $capacity) {
+        $this->number = $number;
+        $this->capacity = $capacity;
+    }
+
+    public function getDetails(): string {
+        return "Room Number: {$this->number}, Capacity: {$this->capacity}";
+    }
+}
+$room = new Room("101", 2);
+echo $room->getDetails(); // Room Number: 101, Capacity: 2
+```
+
+**Implementación de constructores para inicializar objetos.**
+
+- Un constructor se utiliza para inicializar objetos correctamente al crearlos.
+
+```php
+class Room {
+    public string $number;
+    public int $capacity;
+
+    public function __construct(string $number, int $capacity) {
+        $this->number = $number;
+        $this->capacity = $capacity;
+    }
+}
+$room = new Room("101", 2);
+echo $room->number; // 101
+```
+
+**Control de acceso con visibilidad (public, private) y encapsulación de datos.**
+
+- La visibilidad de las propiedades y métodos determina quién puede acceder a ellos.
+- `public`: accesible desde cualquier lugar.
+- `private`: accesible solo dentro de la clase.
+
+**Principios básicos de herencia entre clases.**
+
+- La herencia permite que una clase (subclase) herede propiedades y métodos de otra clase (superclase), promoviendo la reutilización de código y la creación de jerarquías de clases.
+
+```php
+class Room {
+    public string $number;
+    public int $capacity;
+
+    public function __construct(string $number, int $capacity) {
+        $this->number = $number;
+        $this->capacity = $capacity;
+    }
+}
+class SuiteRoom extends Room {
+    public bool $hasBalcony;
+
+    public function __construct(string $number, int $capacity, bool $hasBalcony) {
+        parent::__construct($number, $capacity);
+        $this->hasBalcony = $hasBalcony;
+    }
+}
+
+class DeluxeRoom extends Room {
+    public bool $hasJacuzzi;
+
+    public function __construct(string $number, int $capacity, bool $hasJacuzzi) {
+        parent::__construct($number, $capacity);
+        $this->hasJacuzzi = $hasJacuzzi;
+    }
+}
+```
+
+**Interfaces como contratos para estructurar el código.**
+
+- Una interfaz define un contrato que las clases deben cumplir, especificando los métodos que deben implementar. Esto permite una mayor flexibilidad y consistencia en el diseño del código.
+
+```php
+interface Reservable {
+    public function reserve(): bool;
+}
+class Room implements Reservable {
+    public string $number;
+    public int $capacity;
+
+    public function __construct(string $number, int $capacity) {
+        $this->number = $number;
+        $this->capacity = $capacity;
+    }
+}
+```
+
+**Clases abstractas y su utilidad.**
+
+- Una clase abstracta es una clase que no puede ser instanciada directamente y puede contener métodos abstractos que deben ser implementados por las subclases. Esto permite definir una estructura común para un grupo de clases relacionadas.
+
+```php
+abstract class Room {
+    public string $number;
+    public int $capacity;
+
+    public function __construct(string $number, int $capacity) {
+        $this->number = $number;
+        $this->capacity = $capacity;
+    }
+
+    abstract public function getDetails(): string;
+}
+class SuiteRoom extends Room {
+    public bool $hasBalcony;
+    public function __construct(string $number, int $capacity, bool $hasBalcony) {
+        parent::__construct($number, $capacity);
+        $this->hasBalcony = $hasBalcony;
+    }
+    public function getDetails(): string {
+        return "Suite Room: $this->number, Capacity: $this->capacity, Has Balcony: " . ($this->hasBalcony ? 'Yes' : 'No');
+    }
+}
+```
