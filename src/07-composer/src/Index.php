@@ -1,0 +1,11 @@
+<?php
+
+declare(strict_types=1);
+
+require_once '../vendor/autoload.php';
+  
+$quote = new \RandomQuotes\RandomQuotes();
+
+print_r($quote->generate());
+
+echo "\n";
