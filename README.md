@@ -475,4 +475,30 @@ class Room implements Reservable {
 
 **Clases abstractas y su utilidad.**
 
+- Una clase abstracta es una clase que no puede ser instanciada directamente y puede contener métodos abstractos que deben ser implementados por las subclases. Esto permite definir una estructura común para un grupo de clases relacionadas.
+
+```php
+abstract class Room {
+    public string $number;
+    public int $capacity;
+
+    public function __construct(string $number, int $capacity) {
+        $this->number = $number;
+        $this->capacity = $capacity;
+    }
+
+    abstract public function getDetails(): string;
+}
+class SuiteRoom extends Room {
+    public bool $hasBalcony;
+    public function __construct(string $number, int $capacity, bool $hasBalcony) {
+        parent::__construct($number, $capacity);
+        $this->hasBalcony = $hasBalcony;
+    }
+    public function getDetails(): string {
+        return "Suite Room: $this->number, Capacity: $this->capacity, Has Balcony: " . ($this->hasBalcony ? 'Yes' : 'No');
+    }
+}
+```
+
 **Caso práctico: sistema de reserva de habitación con lógica aplicada.**
