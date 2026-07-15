@@ -500,3 +500,49 @@ class SuiteRoom extends Room {
     }
 }
 ```
+
+## Composer
+
+**¿Qué es Composer y por qué es fundamental en PHP moderno?**
+
+- Gestor de dependencias para PHP que permite declarar y administrar bibliotecas externas en un proyecto.
+- Permite instalar, actualizar y autoloading de paquetes de manera eficiente.
+- Maneja versiones automáticamente, evitando conflictos entre dependencias.
+
+**Uso de composer en un proyecto PHP**
+
+- Inicializa el proyecto con composer init.
+- Define dependencias en composer.json
+- Instala librerias con composer install.
+- Carga automáticamente las clases con vendor/autoload.php
+
+**Instalación e inicialización de Composer en un proyecto.**
+
+- Pegar las siguientes lineas de codigo en el directorio donde se quiera instalar composer.
+
+```bash
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === 'c8b085408188070d5f52bcfe4ecfbee5f727afa458b2573b8eaaf77b3419b0bf2768dc67c86944da1544f06fa544fd47') { echo 'Instalador verificado'.PHP_EOL; } else { echo 'Instalador corrupto'.PHP_EOL; unlink('composer-setup.php'); exit(1); }"
+```
+
+- Crear una carpeta llamada `bin` y ejecutar el siguiente comando.
+
+```bash
+php composer-setup.php --install-dir=bin --filename=composer
+```
+
+- Ejecutar el siguiente comando para verificar la instalación.
+
+```bash
+php -r "unlink('composer-setup.php');
+```
+
+**Cómo agregar una librería externa a tu aplicación.**
+
+**Uso de namespaces para organizar el código.**
+
+**Autoloading con el estándar PSR-4.**
+
+```
+
+```

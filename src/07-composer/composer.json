@@ -1,0 +1,16 @@
+{
+    "name": "edwin/07-composer",
+    "description": "Proyecto para demostrar el uso de composer",
+    "autoload": {
+        "psr-4": {
+            "Edwin\\07Composer\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Edwin Alexander Bernardino Moran",
+            "email": "edwinalexanderbernardinomoran@gmail.com"
+        }
+    ],
+    "require": {}
+}
