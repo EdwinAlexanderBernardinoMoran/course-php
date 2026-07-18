@@ -28,3 +28,5 @@ Homestead.json
 .env.production
 .phpactor.json
 auth.json
+
+src/07-composer/vendor/
