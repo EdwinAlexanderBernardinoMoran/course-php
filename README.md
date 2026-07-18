@@ -539,10 +539,20 @@ php -r "unlink('composer-setup.php');
 
 **Cómo agregar una librería externa a tu aplicación.**
 
+- Se puede agregar una libreria externa a tu proyecto utilizando el comando `composer require nombre/libreria`. Esto descargará la librería y sus dependencias, y actualizará automáticamente el archivo `composer.json` y el autoloading.
+
 **Uso de namespaces para organizar el código.**
+
+- Los namespaces permiten organizar el código en espacios de nombres, evitando conflictos de nombres entre clases y funciones. Se definen con la palabra clave `namespace` al inicio del archivo PHP.
+
+```php
+namespace App\Models;
+```
 
 **Autoloading con el estándar PSR-4.**
 
-```
+- PSR-4 es un estándar de autoloading que permite cargar automáticamente las clases basadas en su namespace y estructura de directorios. Composer genera un archivo `vendor/autoload.php` que se puede incluir en el proyecto para habilitar el autoloading. En caso no funcione, se puede ejecutar el comando `composer dump-autoload` para regenerar el autoloading.
 
+```php
+require_once '../vendor/autoload.php';
 ```
