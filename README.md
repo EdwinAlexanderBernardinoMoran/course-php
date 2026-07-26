@@ -556,3 +556,15 @@ namespace App\Models;
 ```php
 require_once '../vendor/autoload.php';
 ```
+
+## API Simple
+
+**Cómo funcionan los requests y responses en una API.**
+
+**Manejo de JSON como formato de entrada y salida.**
+
+**Creación de endpoints básicos con métodos GET y POST.**
+
+**Validaciones de datos en la API.**
+
+**Manejo de errores y respuestas adecuadas.**
