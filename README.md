@@ -561,7 +561,39 @@ require_once '../vendor/autoload.php';
 
 **Cómo funcionan los requests y responses en una API.**
 
+- Una API (Interfaz de Programación de Aplicaciones) permite la comunicación entre diferentes sistemas a través de solicitudes (requests) y respuestas (responses). Los requests son enviados por el cliente (por ejemplo, un navegador o una aplicación móvil) al servidor, que procesa la solicitud y devuelve una respuesta con los datos solicitados o un mensaje de error.
+
+```php
+$method = $_SERVER['REQUEST_METHOD']; // Obtiene el método de solicitud HTTP (GET, POST, PUT, DELETE, etc.)
+
+echo $method . PHP_EOL;
+echo "Request Method: $method" . PHP_EOL;
+http_response_code(200); // Establece el código de respuesta HTTP a 200 (OK)
+echo "Server is running and responding to requests." . PHP_EOL;
+```
+
 **Manejo de JSON como formato de entrada y salida.**
+
+- JSON (JavaScript Object Notation) es un formato de datos ligero y fácil de leer que se utiliza comúnmente para intercambiar información entre el cliente y el servidor en una API. En PHP, se puede manejar JSON utilizando las funciones `json_encode` y `json_decode`.
+
+```php
+// Convertir un array a JSON
+$data = [
+    "name" => "Edwin",
+    "age" => 30,
+];
+$jsonData = json_encode($data);
+echo $jsonData; // {"name":"Edwin","age":30}
+```
+
+- Leer archivo JSON y convertirlo a un array asociativo.
+
+```php
+$jsonString = file_get_contents('data.json');
+$dataArray = json_decode($jsonString, true); // true para obtener un array asociativo
+
+echo json_encode($dataArray);
+```
 
 **Creación de endpoints básicos con métodos GET y POST.**
 
