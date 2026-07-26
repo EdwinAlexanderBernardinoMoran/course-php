@@ -597,6 +597,22 @@ echo json_encode($dataArray);
 
 **Creación de endpoints básicos con métodos GET y POST.**
 
+- Para crear endpoints básicos en una API, se pueden utilizar los métodos HTTP GET y POST. El método GET se utiliza para obtener datos del servidor, mientras que el método POST se utiliza para enviar datos al servidor.
+
+```php
+if ($method === 'GET') {
+    // Procesar solicitud GET
+    echo json_encode(["message" => "Solicitud GET recibida"]);
+} elseif ($method === 'POST') {
+    // Procesar solicitud POST
+    $inputData = json_decode(file_get_contents('php://input'), true);
+    echo json_encode(["message" => "Solicitud POST recibida", "data" => $inputData]);
+} else {
+    http_response_code(405); // Método no permitido
+    echo json_encode(["error" => "Método no permitido"]);
+}
+```
+
 **Validaciones de datos en la API.**
 
 **Manejo de errores y respuestas adecuadas.**
