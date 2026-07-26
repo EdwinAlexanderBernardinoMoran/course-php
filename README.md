@@ -613,6 +613,18 @@ if ($method === 'GET') {
 }
 ```
 
-**Validaciones de datos en la API.**
-
 **Manejo de errores y respuestas adecuadas.**
+
+- El manejo de errores en una API es crucial para proporcionar respuestas claras y útiles a los clientes. Se pueden utilizar códigos de estado HTTP y mensajes de error para indicar el tipo de error que ocurrió.
+
+```php
+try {
+    // Código que puede generar una excepción
+    if ($method !== 'GET' && $method !== 'POST') {
+        throw new Exception("Método no permitido");
+    }
+} catch (Exception $exception) {
+    http_response_code(500); // Error interno del servidor
+    echo json_encode(["error" => $exception->getMessage()]);
+}
+```
